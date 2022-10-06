@@ -1,0 +1,65 @@
+<!-- <hello name="{{ name }}"></hello> -->
+<h1>{{ name }}</h1>
+
+<p>
+   ngIf ngFor ngSwitch learn angular
+</p>
+
+
+<div *ngIf= "users">
+   <!-- users are present  -->
+
+
+
+
+   <!-- <div *ngFor="let user of users">
+      {{user.name}}
+      {{user.age}}
+      {{user.gender}}
+   </div> -->
+ 
+   <!-- -----------ngIf------------------- -->
+   <!-- <div *ngIf= "users"></div>
+              (or)
+    <ng-template [ngIf]="users"></ng-template> -->
+
+
+
+
+   <div *ngFor= "let user of users">
+      <div [ngSwitch]= "user.gender">
+         <div class="maleBox" *ngSwitchCase="'m'">
+            {{user.name}}
+         </div>
+         <div *ngFor="let user1 of user.shift1" [ngClass]="{femaleBox:user1}">{{user1.a}}{{user1.b}}</div>
+         <div class="femaleBox" *ngSwitchCase="'f'">
+            {{user.name}}
+         </div>
+      </div>
+   </div>
+</div>
+<!-- <br><br><br><br>
+
+
+
+
+<div *ngIf= "users"> 
+
+<div *ngFor= "let user of users">
+<div [ngSwitch]= "user.shift">
+
+   <div class="shift1" *ngSwitchCase="'1'">
+      {{user.name}}
+   </div>
+   <div class="shift2" *ngSwitchCase="'2'">
+      {{user.age}}
+   </div>
+   <div class="shift3" *ngSwitchCase="'3'">
+      {{user.name}}
+   </div>
+   <div class="shift4" *ngSwitchCase="'4'">
+      {{user.name}}
+   </div>
+</div>
+</div>
+</div> -->
